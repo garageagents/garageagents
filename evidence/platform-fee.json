@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "garage.platform-fee-evidence.v1",
+  "chainId": "1",
+  "poolManager": "0x000000000004444c5dc75cB358380D2e3dE08A90",
+  "hookSource": "src/GarageHook.sol",
+  "recipient": "0xD88539d3c4C460136a733A3Fd60cf6BF269079da",
+  "feeBps": 30,
+  "basis": "gross native trade value: buy = native input incl. hook fees, sell = native pool output before hook fees",
+  "rounding": "ceil per trade, computed on gross independently of the project fee (as EthereumNative30HookV3.quoteFees)",
+  "accrual": "hook-held ERC-6909 native claims in platformAccrued; claimPlatform() is callable by anyone and pays only the fixed recipient",
+  "command": "forge test --match-path test/PlatformFee.fork.t.sol -vv",
+  "scenarios": {
+    "buy-exact-in": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "200000000000000000",
+      "platformFee": "600000000000000",
+      "expectedCeil30bps": "600000000000000"
+    },
+    "buy-exact-out": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "2510275088391929",
+      "platformFee": "7530825265176",
+      "expectedCeil30bps": "7530825265176"
+    },
+    "sell-exact-in": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "4864603192803561",
+      "platformFee": "14593809578411",
+      "expectedCeil30bps": "14593809578411"
+    },
+    "sell-exact-out": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "10309278350515464",
+      "platformFee": "30927835051547",
+      "expectedCeil30bps": "30927835051547"
+    },
+    "initial-buy": {
+      "test": "test_initialBuy()",
+      "grossNative": "10000000000000000",
+      "platformFee": "30000000000000",
+      "expectedCeil30bps": "30000000000000"
+    },
+    "own-buyback": {
+      "test": "test_ownBuyback()",
+      "grossNative": "100000000000000000",
+      "platformFee": "300000000000000",
+      "expectedCeil30bps": "300000000000000"
+    },
+    "universal-router-buy-exact-in": {
+      "test": "test_universalRouterBuy()",
+      "grossNative": "50000000000000000",
+      "platformFee": "150000000000000",
+      "expectedCeil30bps": "150000000000000"
+    }
+  },
+  "claim": {
+    "recipient": "0xD88539d3c4C460136a733A3Fd60cf6BF269079da",
+    "platformAccruedBefore": "930000000000000",
+    "recipientBalanceDelta": "930000000000000"
+  }
+}
