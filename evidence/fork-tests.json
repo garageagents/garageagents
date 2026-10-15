@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "garage.fork-test-evidence.v1",
+  "chainId": "1",
+  "poolManager": "0x000000000004444c5dc75cB358380D2e3dE08A90",
+  "forkBlock": "26198029",
+  "command": "FORK_URL=<rpc> FORK_BLOCK=26198029 IDEA_NAME=<name> IDEA_SYMBOL=<symbol> IDEA_FEE_BPS=300 forge test",
+  "results": [
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_bareUniversalRouterBuyAndSell()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_burnerBuybackPaysOnce()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_capPerSignerForThreeBlocks()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_claimsGoOnlyToTheirRecipients()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_launchBundleFits()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_launchUsesTheKernelAndChargesTheInitialBuyOnce()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_onlyTreasuryChangesPayoutAddresses()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_programmableRouterBuyAndSell()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_sellsAreNeverLimited()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_subContractsAreOneBuyer()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_tenBuysPerBlockForThreeBlocks()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Native30.fork.t.sol:Native30ForkTest",
+      "test": "test_testRouterAllSwapKinds()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFeeNative30.fork.t.sol:PlatformFeeNative30ForkTest",
+      "test": "test_alternateRouterAllSwapTypes()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFeeNative30.fork.t.sol:PlatformFeeNative30ForkTest",
+      "test": "test_bareUniversalRouter()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFeeNative30.fork.t.sol:PlatformFeeNative30ForkTest",
+      "test": "test_claimPaysOnlyTheRecipient()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFeeNative30.fork.t.sol:PlatformFeeNative30ForkTest",
+      "test": "test_initialBuy()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFeeNative30.fork.t.sol:PlatformFeeNative30ForkTest",
+      "test": "test_ownBuyback()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFeeNative30.fork.t.sol:PlatformFeeNative30ForkTest",
+      "test": "test_programmableRouter()",
+      "status": "Success"
+    }
+  ]
+}
