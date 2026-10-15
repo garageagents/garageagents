@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "garage.fork-test-evidence.v1",
+  "chainId": "1",
+  "poolManager": "0x000000000004444c5dc75cB358380D2e3dE08A90",
+  "forkBlock": "26200452",
+  "command": "FORK_URL=<rpc> FORK_BLOCK=26200452 IDEA_NAME=<name> IDEA_SYMBOL=<symbol> IDEA_FEE_BPS=200 forge test",
+  "results": [
+    {
+      "suite": "test/PlatformFeeAgent.fork.t.sol:PlatformFeeAgentForkTest",
+      "test": "test_alternateRouterAllSwapTypes()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFeeAgent.fork.t.sol:PlatformFeeAgentForkTest",
+      "test": "test_bareUniversalRouter()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFeeAgent.fork.t.sol:PlatformFeeAgentForkTest",
+      "test": "test_claimPaysOnlyTheRecipient()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFeeAgent.fork.t.sol:PlatformFeeAgentForkTest",
+      "test": "test_idleIdeaShareMainBuyback()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFeeAgent.fork.t.sol:PlatformFeeAgentForkTest",
+      "test": "test_programmableRouter()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/agent/IdeaScenario.t.sol:IdeaScenarioTest",
+      "test": "test_ActWakesUpAndEmptiesPotByEndOfMonday()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/agent/IdeaScenario.t.sol:IdeaScenarioTest",
+      "test": "test_MondayWakeUpPaysLastBuyerNotCaller()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/agent/IdeaScenario.t.sol:IdeaScenarioTest",
+      "test": "test_QuietTwoWeeksKeepTheBearBusy()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/agent/IdeaScenario.t.sol:IdeaScenarioTest",
+      "test": "test_StaleBuyerDoesNotWinAgain()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/agent/IdeaScenario.t.sol:IdeaScenarioTest",
+      "test": "test_TinyLastBuyDoesNotWin()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/agent/IdeaScenario.t.sol:IdeaScenarioTest",
+      "test": "test_WakeUpOnlyOnMonday()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/agent/IdeaScenario.t.sol:IdeaScenarioTest",
+      "test": "test_WeekdayBurnsOnePercentPerHour()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/checker/IdeaInvariants.t.sol:IdeaInvariantsTest",
+      "test": "invariant_actNeverReverts()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/checker/IdeaSpending.t.sol:IdeaSpendingTest",
+      "test": "test_feesGetSpent()",
+      "status": "Success"
+    }
+  ]
+}
