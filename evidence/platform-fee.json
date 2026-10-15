@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "garage.platform-fee-evidence.v2",
+  "chainId": "1",
+  "poolManager": "0x000000000004444c5dc75cB358380D2e3dE08A90",
+  "hook": "EthereumNative30HookV3: Programmable's reviewed kernel, unchanged (vendor/native30; compiled from standard-json/kernel.json to the reviewed creation bytecode)",
+  "vault": "EthereumNativeFeeVaultV3, deployed by the hook in its constructor",
+  "recipient": "0xD88539d3c4C460136a733A3Fd60cf6BF269079da",
+  "feeBps": 30,
+  "creatorFeeBps": 270,
+  "basis": "the kernel's own quoteFees: gross native trade value; buy = funded native input, sell = native pool output before fees",
+  "rounding": "the kernel's own: ceil per trade for the total and for the platform share",
+  "accrual": "the kernel mints native ERC-6909 claims to its vault and records platformAccrued and creatorAccrued; claimPlatform() pays only the fixed recipient, claimCreator() only the FeeSplitter",
+  "routes": "every trade pays the pool once: alternate routers, the bare mainnet Universal Router (V4_SWAP only, no payment command), programmable.market's router with the swap only, the initial buy and the garage's buyback (MainBurner); nothing reaches the platform recipient outside the vault",
+  "command": "forge test --match-path test/PlatformFeeNative30.fork.t.sol -vv",
+  "scenarios": {
+    "buy-exact-in": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "200000000000000000",
+      "platformFee": "600000000000000",
+      "creatorFee": "5400000000000000",
+      "expectedCeil30bps": "600000000000000"
+    },
+    "buy-exact-out": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "2510275088391929",
+      "platformFee": "7530825265176",
+      "creatorFee": "67777427386582",
+      "expectedCeil30bps": "7530825265176"
+    },
+    "sell-exact-in": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "4864603192803561",
+      "platformFee": "14593809578411",
+      "creatorFee": "131344286205696",
+      "expectedCeil30bps": "14593809578411"
+    },
+    "sell-exact-out": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "10309278350515464",
+      "platformFee": "30927835051547",
+      "creatorFee": "278350515463917",
+      "expectedCeil30bps": "30927835051547"
+    },
+    "universal-router-buy": {
+      "test": "test_bareUniversalRouter()",
+      "grossNative": "50000000000000000",
+      "platformFee": "150000000000000",
+      "creatorFee": "1350000000000000",
+      "expectedCeil30bps": "150000000000000"
+    },
+    "universal-router-sell": {
+      "test": "test_bareUniversalRouter()",
+      "grossNative": "24536870892997530",
+      "platformFee": "73610612678993",
+      "creatorFee": "662495514110933",
+      "expectedCeil30bps": "73610612678993"
+    },
+    "initial-buy": {
+      "test": "test_initialBuy()",
+      "grossNative": "10000000000000000",
+      "platformFee": "30000000000000",
+      "creatorFee": "270000000000000",
+      "expectedCeil30bps": "30000000000000"
+    },
+    "own-buyback": {
+      "test": "test_ownBuyback()",
+      "grossNative": "100000000000000000",
+      "platformFee": "300000000000000",
+      "creatorFee": "2700000000000000",
+      "expectedCeil30bps": "300000000000000"
+    },
+    "programmable-router-buy": {
+      "test": "test_programmableRouter()",
+      "grossNative": "50000000000000000",
+      "platformFee": "150000000000000",
+      "creatorFee": "1350000000000000",
+      "expectedCeil30bps": "150000000000000"
+    },
+    "programmable-router-sell": {
+      "test": "test_programmableRouter()",
+      "grossNative": "24536870892997530",
+      "platformFee": "73610612678993",
+      "creatorFee": "662495514110933",
+      "expectedCeil30bps": "73610612678993"
+    }
+  },
+  "claim": {
+    "recipient": "0xD88539d3c4C460136a733A3Fd60cf6BF269079da",
+    "platformAccruedBefore": "930000000000000",
+    "recipientBalanceDelta": "930000000000000"
+  }
+}

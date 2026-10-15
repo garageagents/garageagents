@@ -1,0 +1,29 @@
+{
+  "main": {
+    "4325": "idea",
+    "4327": "mainBurner",
+    "4892": "poolManager",
+    "5812": "initializer",
+    "5814": "idea",
+    "5816": "maxEarlyBuy",
+    "6230": "hook",
+    "6232": "token"
+  },
+  "kernel": {
+    "3460": "poolManager",
+    "7206": "token",
+    "7208": "lpFee",
+    "7210": "tickSpacing",
+    "7212": "initialSqrtPriceX96",
+    "7214": "initializer",
+    "7216": "creatorBuyFeeBps",
+    "7218": "creatorSellFeeBps",
+    "7220": "module",
+    "7222": "moduleCodeHash",
+    "7224": "maxModuleLpFeePips",
+    "7227": "feeVault",
+    "8301": "poolManager",
+    "8303": "kernel",
+    "8305": "creatorRecipient"
+  }
+}
