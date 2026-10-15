@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "garage.fork-test-evidence.v1",
+  "chainId": "1",
+  "poolManager": "0x000000000004444c5dc75cB358380D2e3dE08A90",
+  "forkBlock": "26194801",
+  "command": "FORK_URL=<rpc> FORK_BLOCK=26194801 IDEA_NAME=<name> IDEA_SYMBOL=<symbol> IDEA_FEE_BPS=300 forge test",
+  "results": [
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "testFuzz_buyFeeSplit(uint16,uint96)",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_actCollectsShareAndResetsTheClock()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_agentTokenSplit()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_allSwapKindsPayFee()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_attack_dustTradesPay()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_attack_earlyCapExactInput()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_attack_reentrantIdeaIsPaidOnce()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_attack_rejectingRecipientBlocksOnlyItself()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_attack_routerSettingsDoNotSkipFee()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_attack_subContractsAreOneBuyer()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_attack_thirdPartyLiquidityAndDonations()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_brokenIdeaDoesNotBreakTrading()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_buyAndBurn()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_claimsGoToFixedAddresses()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_earlyBlockBuyLimit()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_earlyBuysCapPerWallet()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_fairRandomOldBlocks()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_fairRandomRecentBlock()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_feeOutOfRangeRejected()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_ideaBuysAreNotMarketActivity()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_ideaCanBuyBurnAndTakeDeposits()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_ideaClaimsItself()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_ideaLearnsItsTokenAtLaunch()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_idleIdeaShareBurnsMainToken()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_initialBuyIsNotCapped()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_lastBuyerIdeaUsesStats()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_launchBuyGoesIntoThePool()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_launchLocksWholeSupply()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_mainTokenCannotBurnItself()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_mainTokenHasNoIdeaToPay()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_mainTokenSplit()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_onlyInitializerStartsThePool()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_onlyTreasuryChangesAddresses()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_sellsNotLimitedEarly()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/Garage.fork.t.sol:GarageForkTest",
+      "test": "test_statsTrackSwaps()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFee.fork.t.sol:PlatformFeeForkTest",
+      "test": "test_alternateRouterAllSwapTypes()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFee.fork.t.sol:PlatformFeeForkTest",
+      "test": "test_claimPaysOnlyTheRecipient()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFee.fork.t.sol:PlatformFeeForkTest",
+      "test": "test_initialBuy()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFee.fork.t.sol:PlatformFeeForkTest",
+      "test": "test_ownBuyback()",
+      "status": "Success"
+    },
+    {
+      "suite": "test/PlatformFee.fork.t.sol:PlatformFeeForkTest",
+      "test": "test_universalRouterBuy()",
+      "status": "Success"
+    }
+  ]
+}
