@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "garage.platform-fee-evidence.v2",
+  "chainId": "1",
+  "poolManager": "0x000000000004444c5dc75cB358380D2e3dE08A90",
+  "hook": "EthereumNative30HookV3: Programmable's reviewed kernel, unchanged (vendor/native30; compiled from standard-json/kernel.json to the reviewed creation bytecode)",
+  "vault": "EthereumNativeFeeVaultV3, deployed by the hook in its constructor",
+  "recipient": "0xD88539d3c4C460136a733A3Fd60cf6BF269079da",
+  "feeBps": 30,
+  "creatorFeeBps": 170,
+  "basis": "the kernel's own quoteFees: gross native trade value; buy = funded native input, sell = native pool output before fees",
+  "rounding": "the kernel's own: ceil per trade for the total and for the platform share",
+  "accrual": "the kernel mints native ERC-6909 claims to its vault and records platformAccrued and creatorAccrued; claimPlatform() pays only the fixed recipient, claimCreator() only the FeeSplitter (80% to the idea contract, 10% each to the agents' work wallet and the treasury)",
+  "routes": "every trade pays the pool once: alternate routers, the bare mainnet Universal Router (V4_SWAP only, no payment command) and programmable.market's router with the swap only; an idea share left unclaimed for a day buys back and burns the main token through the main token's pool, paying the platform share there once; nothing reaches the platform recipient outside the vaults",
+  "command": "forge test --match-path test/PlatformFeeAgent.fork.t.sol -vv",
+  "scenarios": {
+    "buy-exact-in": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "200000000000000000",
+      "platformFee": "600000000000000",
+      "creatorFee": "3400000000000000",
+      "expectedCeil30bps": "600000000000000"
+    },
+    "buy-exact-out": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "2469443233936316",
+      "platformFee": "7408329701809",
+      "creatorFee": "41980534976918",
+      "expectedCeil30bps": "7408329701809"
+    },
+    "sell-exact-in": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "4834801602336118",
+      "platformFee": "14504404807009",
+      "creatorFee": "82191627239714",
+      "expectedCeil30bps": "14504404807009"
+    },
+    "sell-exact-out": {
+      "test": "test_alternateRouterAllSwapTypes()",
+      "grossNative": "10204081632653062",
+      "platformFee": "30612244897960",
+      "creatorFee": "173469387755102",
+      "expectedCeil30bps": "30612244897960"
+    },
+    "universal-router-buy": {
+      "test": "test_bareUniversalRouter()",
+      "grossNative": "50000000000000000",
+      "platformFee": "150000000000000",
+      "creatorFee": "850000000000000",
+      "expectedCeil30bps": "150000000000000"
+    },
+    "universal-router-sell": {
+      "test": "test_bareUniversalRouter()",
+      "grossNative": "24795580490784229",
+      "platformFee": "74386741472353",
+      "creatorFee": "421524868343332",
+      "expectedCeil30bps": "74386741472353"
+    },
+    "idle-idea-share-main-buyback": {
+      "test": "test_idleIdeaShareMainBuyback()",
+      "grossNative": "6800000000000000",
+      "platformFee": "20400000000000",
+      "creatorFee": "183600000000000",
+      "expectedCeil30bps": "20400000000000"
+    },
+    "programmable-router-buy": {
+      "test": "test_programmableRouter()",
+      "grossNative": "50000000000000000",
+      "platformFee": "150000000000000",
+      "creatorFee": "850000000000000",
+      "expectedCeil30bps": "150000000000000"
+    },
+    "programmable-router-sell": {
+      "test": "test_programmableRouter()",
+      "grossNative": "24795580490784229",
+      "platformFee": "74386741472353",
+      "creatorFee": "421524868343332",
+      "expectedCeil30bps": "74386741472353"
+    }
+  },
+  "claim": {
+    "recipient": "0xD88539d3c4C460136a733A3Fd60cf6BF269079da",
+    "platformAccruedBefore": "900000000000000",
+    "recipientBalanceDelta": "900000000000000"
+  }
+}
